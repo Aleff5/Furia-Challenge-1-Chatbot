@@ -3,9 +3,8 @@ const { HLTV } = require('hltv');
 async function playersList() {
     try {
         const res = await HLTV.getTeam({ id: 8297 });
-        const players = res.players;  // Mantemos a lista de jogadores com id e nome
+        const players = res.players;  
 
-        // Retorna a lista de jogadores com nome e id
         return players.map(player => ({
             name: player.name,
             id: player.id
@@ -21,7 +20,6 @@ async function getPlayerStats(playerId) {
     try {
         const res = await HLTV.getPlayerStats({ id: playerId });
 
-        // Verificar se a resposta contém os dados esperados
         if (!res || !res.overviewStatistics) {
             return "Erro ao obter estatísticas, resposta inválida.";
         }

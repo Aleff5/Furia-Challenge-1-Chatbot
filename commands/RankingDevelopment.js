@@ -4,23 +4,6 @@ const fs = require('fs');
 
 
 
-// async function Info {
-//     try{
-//         const res = await HLTV.getTeam({id: 8297})
-//         // const nome = res.name;
-//         const rank = res.rankingDevelopment;
-//         console.log(rank);
-//         return rank;
-        
-
-//     }
-//     catch(err){
-//         console.log(err);
-//         return err;
-//     }
-    
-// }
-
 const width = 800;
 const height = 400;
 
@@ -36,7 +19,7 @@ async function gerarGrafico() {
   const config = {
     type: 'line',
     data: {
-      labels: data.map((_, i) => `T${i + 1}`), // T1, T2, T3...
+      labels: data.map((_, i) => `T${i + 1}`), 
       datasets: [{
         label: 'Ranking da FURIA 🐆',
         data: data,
@@ -50,7 +33,7 @@ async function gerarGrafico() {
     options: {
       scales: {
         y: {
-          reverse: true, // ranking menor é melhor!
+          reverse: true, 
           title: {
             display: true,
             text: 'Posição no ranking'

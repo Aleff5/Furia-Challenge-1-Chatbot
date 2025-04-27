@@ -15,9 +15,9 @@ const { ProximosJogos } = require('./commands/jogos.js')
 
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
     polling: {
-      interval: 1000,  // Intervalo entre as requisições de polling (em milissegundos)
-      timeout: 10,     // Timeout (em segundos)
-      consecutive_errors_threshold: 5 // Número máximo de erros consecutivos antes de interromper o polling
+      interval: 1000,  
+      timeout: 10,     
+      consecutive_errors_threshold: 5 
     }
 });
 
@@ -38,15 +38,15 @@ bot.setMyCommands([
 
 console.log("Bot iniciado...");
 
-// Comandos específicos com barra
+
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   bot.sendMessage(chatId, `🐺🔥 Bem-vindo ao Bot da FURIA! 🔥🐺
 
 Eu sou seu assistente inteligente da FURIA!
-Pode falar comigo de forma tranquila e informal — entendo o que você escrever.  
 Aqui você encontra notícias, resultados, eventos, estatísticas e muito mais!
+Pode falar comigo de forma tranquila — entendo o que você escrever.  
 
 Escolha uma opção abaixo para começarmos: 👇`, {
     reply_markup: {
@@ -112,7 +112,7 @@ bot.on('callback_query', async (query) => {
       await bot.sendMessage(chatId, "Erro ao buscar estatísticas.");
     }
   } 
-  // NOVO: tratamento dos botões inline do /start
+  
   else if (callbackData === 'inline_ranking') {
     bot.sendMessage(chatId, '/ranking (Em breve atualizado com botão 😎)');
   } else if (callbackData === 'inline_eventos') {
@@ -209,7 +209,7 @@ bot.onText(/\/grafico_rank/, async (msg) => {
   const path = 'grafico-furia.png';
 
   try {
-    await gerarGrafico(); // Gera e salva o gráfico
+    await gerarGrafico(); 
 
     await bot.sendPhoto(chatId, fs.createReadStream(path));
 
@@ -227,7 +227,7 @@ bot.onText(/\/grafico_rank/, async (msg) => {
 });
 
 
-// OK
+
 bot.onText(/\/twitter/, async (msg) => {
     const chatId = msg.chat.id;
     const twitte = await getUltimoPostTwitter();
@@ -276,20 +276,20 @@ bot.on('message', async (msg) => {
       bot.sendMessage(chatId, info);
       break;
 
-    case '🎮 Estatísticas dos Jogadores': // Aqui você chama o novo comando
-      const players = await playersList();  // Obtém a lista de jogadores (nome e id)
+    case '🎮 Estatísticas dos Jogadores': 
+      const players = await playersList();
 
       const playerButtons = players.map(player => {
           return {
-              text: player.name,  // Nome do jogador
-              callback_data: `player_${player.id}`  // ID do jogador
+              text: player.name,  
+              callback_data: `player_${player.id}`  
           };
       });
 
-    // Estrutura do teclado inline
+    
       const keyboard = {
           reply_markup: {
-              inline_keyboard: [playerButtons]  // Adiciona os botões ao teclado
+              inline_keyboard: [playerButtons] 
           }
       };
     bot.sendMessage(chatId, 'Escolha um jogador para ver as estatísticas:', keyboard);

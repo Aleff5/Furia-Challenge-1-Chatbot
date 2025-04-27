@@ -74,7 +74,7 @@ Mensagem do usuário:
         'info_time',
         'player_stats',
         'proximos_jogos'
-      ];
+    ];
       
 
     if (intencoesValidas.includes(intencao)) {

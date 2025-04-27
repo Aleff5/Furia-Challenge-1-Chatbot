@@ -1,12 +1,12 @@
 const Parser = require('rss-parser');
 const parser = new Parser();
 
-const FEED_URL = 'https://rss.app/feeds/33fXqtWRY4Zbps4P.xml'; // troque pelo seu
+const FEED_URL = 'https://rss.app/feeds/33fXqtWRY4Zbps4P.xml'; 
 
 
 async function ProximosJogos() {
     try {
-      const timeDesejado = 'FURIA'; // exemplo: quero ver jogos da FURIA
+      const timeDesejado = 'FURIA'; 
       const feed = await parser.parseURL(FEED_URL);
       const jogos = [];
   
@@ -19,7 +19,7 @@ async function ProximosJogos() {
       if (jogos.length === 0) {
         return `❌ O time ${timeDesejado} não tem jogos marcados no momento. 😞`;
       }
-    //   console.log(feed)
+    
       return jogos.join('\n\n');
     } catch (error) {
       console.error('❌ Erro ao buscar jogos:', error.message);

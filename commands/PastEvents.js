@@ -1,6 +1,5 @@
 const { HLTV } = require('hltv')
 
-// // ! BE CAREFUL, THIS CAN MAKE A LOT OF REQUESTS IF THERE ARE A LOT OF PAGES
 
 
 async function GetPastEvents() {

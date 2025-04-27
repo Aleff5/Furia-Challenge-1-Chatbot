@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const RSS_FEED_URL = 'https://rss.app/feeds/v1.1/jIrjdnq0FqPKwsHN.json'; // seu link JSON aqui
+const RSS_FEED_URL = 'https://rss.app/feeds/v1.1/jIrjdnq0FqPKwsHN.json'; 
 
 async function getUltimoPostTwitter() {
   try {
