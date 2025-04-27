@@ -59,7 +59,7 @@ TELEGRAM_TOKEN=SEU_TOKEN_AQUI
 4. **Execute o bot**:
 
 ```bash
-node index.js
+node telegram.js
 ```
 
 5. **Pronto!** Seu bot estará online interagindo com os fãs. 🎮🔥
