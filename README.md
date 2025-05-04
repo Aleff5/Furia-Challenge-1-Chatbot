@@ -4,6 +4,7 @@ Este projeto é um **chatbot para fãs da FURIA** (time de CS:GO e eSports), des
 
 O bot interage com os usuários de forma inteligente e traz informações atualizadas sobre o time, eventos, resultados e jogadores.
 
+Link para o Bot: vermillion-cendol-d2e76f.netlify.app
 ---
 
 ## 🚀 Funcionalidades
