@@ -7,7 +7,7 @@ async function GetPastEvents() {
         const today = new Date().toISOString().split('T')[0];
 
         const res = await HLTV.getPastEvents({
-            attendingTeamIds: [9565],
+            attendingTeamIds: [8297],
             delayBetweenPageRequests: 1500,
             startDate: '2024-06-01',
             endDate: today

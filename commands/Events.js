@@ -3,7 +3,7 @@ const { HLTV } = require('hltv');
 
 async function getEventos(){
     try{
-        const res = await HLTV.getEvents({attendingTeamIds:[9565]})
+        const res = await HLTV.getEvents({attendingTeamIds:[8297]})
         if(res.length === 0){
             return "Sem eventos próximos."
         }

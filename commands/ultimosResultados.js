@@ -2,7 +2,7 @@ const { HLTV } = require('hltv');
 
 async function UltimosResultados() {
     try {
-        const res = await HLTV.getTeamStats({ id: 9565, currentRosterOnly: true });
+        const res = await HLTV.getTeamStats({ id: 8297, currentRosterOnly: true });
         const eventos = res.events;
 
         let resultadoFinal = '';

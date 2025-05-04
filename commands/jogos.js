@@ -1,7 +1,7 @@
 const Parser = require('rss-parser');
 const parser = new Parser();
 
-const FEED_URL = 'https://rss.app/feeds/33fXqtWRY4Zbps4P.xml'; 
+const FEED_URL = 'https://rss.app/feeds/74DhRLnSWttObl3P.xml'; 
 
 
 async function ProximosJogos() {
